@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tolkebilag2_view">
+
+    <Button
+        android:padding="10dp"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Næste"
+        android:id="@+id/next"
+        android:textColor="#000000"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="UDFYLDES AF TOLK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:editable="false"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tolkning i forbindelse med:"
+        android:ems="10"
+        android:focusable="false"
+        android:editable="false"
+        android:layout_below="@+id/textView"
+        android:id="@+id/tolkText"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Tolkningtype"
+        android:editable="false"
+        android:layout_alignBottom="@+id/tolkText"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/tolkText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ydelsens omfang:"
+        android:ems="10"
+        android:focusable="false"
+        android:editable="false"
+        android:layout_below="@+id/tolkText"
+        android:layout_alignParentStart="true"
+        android:id="@+id/omfangText" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/omfangText"
+        android:id="@+id/Ydelsensomfang"
+        android:editable="false"
+        android:layout_below="@+id/tolkText"
+        android:layout_toEndOf="@+id/tolkText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ydelsens type:"
+        android:ems="10"
+        android:focusable="false"
+        android:editable="false"
+        android:layout_below="@+id/omfangText"
+        android:layout_toStartOf="@+id/Ydelsensomfang"
+        android:id="@+id/typeText" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/typeText"
+        android:id="@+id/Ydelsenstype"
+        android:editable="false"
+        android:layout_below="@+id/omfangText"
+        android:layout_toEndOf="@+id/omfangText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sprog:"
+        android:ems="10"
+        android:focusable="false"
+        android:editable="false"
+        android:layout_below="@+id/typeText"
+        android:layout_alignParentStart="true"
+        android:id="@+id/sprogText" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sprogText"
+        android:id="@+id/Sprog"
+        android:hint="Sprog *"
+        android:editable="false"
+        android:layout_below="@+id/typeText"
+        android:layout_toEndOf="@+id/typeText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:editable="false"
+        android:textColor="#000000"
+        android:id="@+id/Fratid"
+        android:hint="Ydelsen Start Tid *"
+        android:layout_below="@+id/Dato"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:editable="false"
+        android:textColor="#000000"
+        android:id="@+id/Dato"
+        android:hint="Dato *"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:editable="false"
+        android:textColor="#000000"
+        android:id="@+id/Tiltid"
+        android:hint="Ydelsen Slut Tid *"
+        android:layout_below="@+id/Fratid"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
