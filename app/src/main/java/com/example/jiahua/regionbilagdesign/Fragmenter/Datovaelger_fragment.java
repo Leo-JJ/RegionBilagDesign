@@ -28,7 +28,7 @@ public class Datovaelger_fragment extends DialogFragment implements View.OnClick
     private int end;
 
     public Datovaelger_fragment() {
-        // Required empty public constructor
+        // Required empty public constructor1
     }
 
     public static Datovaelger_fragment newInstance(OnDateRangeSelectedListener callback, boolean is24HourMode, int end) {
