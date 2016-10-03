@@ -21,8 +21,8 @@ import com.example.jiahua.regionbilagdesign.R;
 
 public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragment.OnDateRangeSelectedListener, Tidsvaelger_fragment.OnTimeRangeSelectedListener {
 
-    private Spinner Tolkningtype, Ydelsesomfang, Ydelsestype, Sprog;
-    private EditText dato, fratid, tiltid;
+    private Spinner Tolkningtype, Ydelsesomfang, Ydelsestype;
+    private EditText dato, fratid, tiltid, sprog;
     private boolean sluttidkun = false;
     private Fragmentmanager fragments = new Fragmentmanager();
     private Button next = null;
@@ -34,7 +34,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
         Tolkningtype = (Spinner) rod.findViewById(R.id.Tolkningtype);
         Ydelsesomfang = (Spinner) rod.findViewById(R.id.Ydelsensomfang);
         Ydelsestype = (Spinner) rod.findViewById(R.id.Ydelsenstype);
-        Sprog = (Spinner) rod.findViewById(R.id.Sprog);
+        sprog = (EditText) rod.findViewById(R.id.Sprog);
         dato = (EditText) rod.findViewById(R.id.Dato);
         fratid = (EditText) rod.findViewById(R.id.Fratid);
         tiltid = (EditText) rod.findViewById(R.id.Tiltid);
@@ -61,7 +61,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 "Webcamtolkning"
         };
 
-        String[] sprogtyper = new String[] {
+        /*String[] sprogtyper = new String[] {
                 "Arabic",
                 "Estonian",
                 "Faroese",
@@ -118,7 +118,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 "Urdu",
                 "Uzbek",
                 "Vietnamese",
-                "Welsh" };
+                "Welsh" };*/
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, tolkforbindelse);
         Tolkningtype.setAdapter(adapter);
@@ -128,20 +128,6 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsenstype);
         Ydelsestype.setAdapter(adapter2);
-
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, sprogtyper);
-        Sprog.setAdapter(adapter3);
-        Sprog.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

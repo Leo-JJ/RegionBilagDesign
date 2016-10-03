@@ -86,26 +86,6 @@
         android:layout_below="@+id/omfangText"
         android:layout_toEndOf="@+id/omfangText" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sprog:"
-        android:ems="10"
-        android:focusable="false"
-        android:editable="false"
-        android:layout_below="@+id/typeText"
-        android:layout_alignParentStart="true"
-        android:id="@+id/sprogText" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/sprogText"
-        android:id="@+id/Sprog"
-        android:hint="Sprog *"
-        android:editable="false"
-        android:layout_below="@+id/typeText"
-        android:layout_toEndOf="@+id/typeText" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -125,9 +105,9 @@
         android:ems="10"
         android:editable="false"
         android:textColor="#000000"
-        android:id="@+id/Dato"
-        android:hint="Dato *"
-        android:layout_centerVertical="true"
+        android:id="@+id/Tiltid"
+        android:hint="Ydelsen Slut Tid *"
+        android:layout_below="@+id/Fratid"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
@@ -135,12 +115,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:focusable="false"
+        android:editable="false"
+        android:id="@+id/Sprog"
+        android:layout_below="@+id/Tiltid"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="Sprog *" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
         android:editable="false"
         android:textColor="#000000"
-        android:id="@+id/Tiltid"
-        android:hint="Ydelsen Slut Tid *"
-        android:layout_below="@+id/Fratid"
+        android:id="@+id/Dato"
+        android:hint="Dato *"
+        android:layout_below="@+id/typeText"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp"
+        android:layout_toStartOf="@+id/Ydelsenstype"
         android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
