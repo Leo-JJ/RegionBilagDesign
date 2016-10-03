@@ -61,65 +61,6 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 "Webcamtolkning"
         };
 
-        /*String[] sprogtyper = new String[] {
-                "Arabic",
-                "Estonian",
-                "Faroese",
-                "Farsi",
-                "Finnish",
-                "French",
-                "Gaelic",
-                "Galician",
-                "German",
-                "Greek",
-                "Hebrew",
-                "Hindi",
-                "Hungarian",
-                "Icelandic",
-                "Indonesian",
-                "Inuktitut (Eskimo)",
-                "Italian",
-                "Japanese",
-                "Khmer",
-                "Korean",
-                "Kurdish",
-                "Laotian",
-                "Latvian",
-                "Lappish",
-                "Lithuanian",
-                "Macedonian",
-                "Malay",
-                "Maltese",
-                "Nepali",
-                "Norwegian",
-                "Pashto",
-                "Polish",
-                "Portuguese",
-                "Romanian",
-                "Russian",
-                "Scots",
-                "Serbian",
-                "Slovak",
-                "Slovenian",
-                "Somali",
-                "Spanish",
-                "Swedish",
-                "Swahili",
-                "Tagalog-Filipino",
-                "Tajik",
-                "Tamil",
-                "Thai",
-                "Tibetan",
-                "Tigrinya",
-                "Tongan",
-                "Turkish",
-                "Turkmen",
-                "Ucrainian",
-                "Urdu",
-                "Uzbek",
-                "Vietnamese",
-                "Welsh" };*/
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, tolkforbindelse);
         Tolkningtype.setAdapter(adapter);
 
@@ -135,16 +76,6 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 if(v == next) {
                     getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag3fragment()).addToBackStack(fragments.getTolkbilag3fragment().getTag()).commit();
                 }
-
-                /*if (validate.validatebestillingsoplysninger(dato, fratid, tiltid, Cpr, borgernavn)) {
-                    Bestillingsdata.Dato = dato.getText().toString();
-                    Bestillingsdata.tidfra = fratid.getText().toString();
-                    Bestillingsdata.tidtil = tiltid.getText().toString();
-                    Bestillingsdata.cpr = Cpr.getText().toString();
-                    Bestillingsdata.borgernavn = borgernavn.getText().toString();
-
-                    getFragmentManager().beginTransaction().replace(R.id.container, fragments.getFrakturaoplysninger()).addToBackStack(fragments.getFrakturaoplysninger().getTag()).commit();
-                }*/
             }
         });
         dato.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -179,13 +110,6 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
 
         return rod;
     }
-
-    /*@Override
-    public void onClick(View v) {
-        if (v == next) {
-            getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag3fragment()).addToBackStack(fragments.getTolkbilag3fragment().getTag()).commit();
-        }
-    }*/
 
     @Override
     public void onDateRangeSelected(int startDay, int startMonth, int startYear, int endDay, int endMonth, int endYear) {
