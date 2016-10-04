@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.TextView;
 
 import com.example.jiahua.regionbilagdesign.Logic.Fragmentmanager;
 import com.example.jiahua.regionbilagdesign.R;
@@ -22,6 +24,7 @@ import com.example.jiahua.regionbilagdesign.R;
 public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragment.OnDateRangeSelectedListener, Tidsvaelger_fragment.OnTimeRangeSelectedListener {
 
     private Spinner Tolkningtype, Ydelsesomfang, Ydelsestype;
+    private TextView textView;
     private EditText dato, fratid, tiltid, sprog;
     private boolean sluttidkun = false;
     private Fragmentmanager fragments = new Fragmentmanager();
@@ -34,6 +37,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
         Tolkningtype = (Spinner) rod.findViewById(R.id.Tolkningtype);
         Ydelsesomfang = (Spinner) rod.findViewById(R.id.Ydelsensomfang);
         Ydelsestype = (Spinner) rod.findViewById(R.id.Ydelsenstype);
+        textView = (TextView)rod.findViewById(R.id.textView2);
         sprog = (EditText) rod.findViewById(R.id.Sprog);
         dato = (EditText) rod.findViewById(R.id.Dato);
         fratid = (EditText) rod.findViewById(R.id.Fratid);
@@ -45,6 +49,8 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 "Førstegangstolkning under ét indlæggelsesforløb",
                 "Senere tolkning under ét índlæggelsesfprløb"
         };
+        final int[] val1 = { 0, 1, 2};
+
         String[] ydelsensomfang = new String[] {
                 "Planlagt tolkning 08-17 hverdage",
                 "Planlagt tolkning 17-08 hverdage",
@@ -63,6 +69,18 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, tolkforbindelse);
         Tolkningtype.setAdapter(adapter);
+        Tolkningtype.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String s1 = String.valueOf(val1[position]);
+                textView.setText(s1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsensomfang);
         Ydelsesomfang.setAdapter(adapter1);
