@@ -2,7 +2,6 @@ package com.example.jiahua.regionbilagdesign.Fragmenter;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,20 +23,22 @@ import com.example.jiahua.regionbilagdesign.R;
 public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragment.OnDateRangeSelectedListener, Tidsvaelger_fragment.OnTimeRangeSelectedListener {
 
     private Spinner Tolkningtype, Ydelsesomfang, Ydelsestype;
-    private TextView textView;
+    private TextView textView1, textView2; //Slettes senere det er kun for at teste
     private EditText dato, fratid, tiltid, sprog;
     private boolean sluttidkun = false;
     private Fragmentmanager fragments = new Fragmentmanager();
     private Button next = null;
+    private String s1, s2;
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
         View rod = i.inflate(R.layout.tolkbilag2_view, container, false);
         next = (Button) rod.findViewById(R.id.next);
 
-        Tolkningtype = (Spinner) rod.findViewById(R.id.Tolkningtype);
-        Ydelsesomfang = (Spinner) rod.findViewById(R.id.Ydelsensomfang);
-        Ydelsestype = (Spinner) rod.findViewById(R.id.Ydelsenstype);
-        textView = (TextView)rod.findViewById(R.id.textView2);
+        Tolkningtype = (Spinner) rod.findViewById(R.id.spinnerTolkningtype);
+        Ydelsesomfang = (Spinner) rod.findViewById(R.id.spinnerOmfangogtype);
+        //Ydelsestype = (Spinner) rod.findViewById(R.id.Ydelsenstype);
+        textView1 = (TextView)rod.findViewById(R.id.textView1); //Slettes senere, det er kun for at test
+        textView2 = (TextView) rod.findViewById(R.id.textView2); //Slettes senere, det er kun for at test
         sprog = (EditText) rod.findViewById(R.id.Sprog);
         dato = (EditText) rod.findViewById(R.id.Dato);
         fratid = (EditText) rod.findViewById(R.id.Fratid);
@@ -52,6 +53,34 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
         final int[] val1 = { 0, 1, 2};
 
         String[] ydelsensomfang = new String[] {
+                "Planlagt tolkning 08-17 hverdage - Konsultation",
+                "Planlagt tolkning 08-17 hverdage - Telefonkonsultation",
+                "Planlagt tolkning 08-17 hverdage - Webcamtolkning",
+                "Planlagt tolkning 17-08 hverdage - Konsultation",
+                "Planlagt tolkning 17-08 hverdage - Telefonkonsultation",
+                "Planlagt tolkning 17-08 hverdage - Webcamtolkning",
+                "Akuttolkning 08-17 hverdage - Konsultation",
+                "Akuttolkning 08-17 hverdage - Telefonkonsultation",
+                "Akuttolkning 08-17 hverdage - Webcamtolkning",
+                "Akuttolkning 17-08 hverdage - Konsultation",
+                "Akuttolkning 17-08 hverdage - Telefonkonsultation",
+                "Akuttolkning 17-08 hverdage - Webcamtolkning",
+                "Akuttolkning lør/søn/helligdage - Konsultation",
+                "Akuttolkning lør/søn/helligdage - Telefonkonsultation",
+                "Akuttolkning lør/søn/helligdage - Webcamtolkning",
+                "Patienten udeblevet - Konsultation",
+                "Patienten udeblevet - Telefonkonsultation",
+                "Patienten udeblevet - Webcamtolkning",
+                "Tolken udeblevet - Konsultation",
+                "Tolken udeblevet - Telefonkonsultation",
+                "Tolken udeblevet - Webcamtolkning",
+                "Tolkning aflyst indenfor 12 timer - Konsultation",
+                "Tolkning aflyst indenfor 12 timer - Telefonkonsultation",
+                "Tolkning aflyst indenfor 12 timer - Webcamtolkning"
+        };
+        final int[] val2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+
+        /*String[] ydelsensomfang = new String[] {
                 "Planlagt tolkning 08-17 hverdage",
                 "Planlagt tolkning 17-08 hverdage",
                 "Akuttolkning 08-17 hverdage",
@@ -61,19 +90,24 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 "Tolken udeblevet",
                 "Tolkning aflyst indenfor 12 timer"
         };
+        final int[] val3 = {0, 1, 2, 3, 4, 5, 6, 7};
+
         String[] ydelsenstype = new String[] {
                 "Konsultation",
                 "Telefonkonsultation",
                 "Webcamtolkning"
         };
+        final int[] val4 = {0, 1, 2};
+        final int[] val5 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+        */
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, tolkforbindelse);
         Tolkningtype.setAdapter(adapter);
-        Tolkningtype.setOnItemSelectedListener(new OnItemSelectedListener() {
+        Tolkningtype.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String s1 = String.valueOf(val1[position]);
-                textView.setText(s1);
+                s1 = String.valueOf(val1[position]);
+                textView1.setText(s1); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -84,9 +118,21 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsensomfang);
         Ydelsesomfang.setAdapter(adapter1);
+        Ydelsesomfang.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                s2 = String.valueOf(val2[position]);
+                textView2.setText(s2); //Slettes senere, det er kun for at test
+            }
 
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsenstype);
-        Ydelsestype.setAdapter(adapter2);
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        /*ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsenstype);
+        Ydelsestype.setAdapter(adapter2);*/
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -34,81 +34,53 @@
         android:editable="false"
         android:layout_below="@+id/textView"
         android:id="@+id/tolkText"
-        android:layout_alignParentStart="true" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Tolkningtype"
-        android:editable="false"
-        android:layout_alignBottom="@+id/tolkText"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/tolkText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ydelsens omfang:"
-        android:ems="10"
-        android:focusable="false"
-        android:editable="false"
-        android:layout_below="@+id/tolkText"
-        android:layout_alignParentStart="true"
-        android:id="@+id/omfangText" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/omfangText"
-        android:id="@+id/Ydelsensomfang"
-        android:editable="false"
-        android:layout_below="@+id/tolkText"
-        android:layout_toEndOf="@+id/tolkText" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ydelsens type:"
-        android:ems="10"
-        android:focusable="false"
-        android:editable="false"
-        android:layout_below="@+id/omfangText"
-        android:layout_toStartOf="@+id/Ydelsensomfang"
-        android:id="@+id/typeText" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/typeText"
-        android:id="@+id/Ydelsenstype"
-        android:editable="false"
-        android:layout_below="@+id/omfangText"
-        android:layout_toEndOf="@+id/omfangText" />
-
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:editable="false"
-        android:textColor="#000000"
-        android:id="@+id/Fratid"
-        android:hint="Ydelsen Start Tid *"
-        android:layout_below="@+id/Dato"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerOmfangogtype"
+        android:editable="false"
+        android:layout_toEndOf="@+id/textView1"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/omfangogtypeText" />
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerTolkningtype"
+        android:editable="false"
+        android:layout_below="@+id/tolkText"
+        android:layout_alignParentStart="true" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Ydelsens omfang og type:"
         android:ems="10"
+        android:focusable="false"
         android:editable="false"
-        android:textColor="#000000"
-        android:id="@+id/Tiltid"
-        android:hint="Ydelsen Slut Tid *"
-        android:layout_below="@+id/Fratid"
+        android:id="@+id/omfangogtypeText"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/spinnerTolkningtype" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:text="Counter"
+        android:layout_above="@+id/next"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/next"
         android:layout_alignParentEnd="true" />
 
     <EditText
@@ -119,10 +91,35 @@
         android:editable="false"
         android:enabled="false"
         android:id="@+id/Sprog"
-        android:layout_below="@+id/Tiltid"
+        android:hint="Sprog *"
+        android:layout_above="@+id/textView1"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Sprog *" />
+        android:layout_marginBottom="34dp"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:editable="false"
+        android:textColor="#000000"
+        android:id="@+id/Tiltid"
+        android:hint="Ydelsen Slut Tid *"
+        android:layout_above="@+id/Sprog"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:editable="false"
+        android:textColor="#000000"
+        android:id="@+id/Fratid"
+        android:hint="Ydelsen Start Tid *"
+        android:layout_above="@+id/Tiltid"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -133,18 +130,8 @@
         android:textColor="#000000"
         android:id="@+id/Dato"
         android:hint="Dato *"
-        android:layout_below="@+id/typeText"
+        android:layout_above="@+id/Fratid"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="44dp"
-        android:layout_toStartOf="@+id/Ydelsenstype"
         android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Sprog"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView2"
-        android:text="Counter" />
 
 </RelativeLayout>
