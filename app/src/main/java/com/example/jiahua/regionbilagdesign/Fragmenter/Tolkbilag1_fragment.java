@@ -14,7 +14,7 @@ import com.example.jiahua.regionbilagdesign.R;
  * Created by Jiahua on 26-09-2016.
  */
 
-public class Tolkbilag1_fragment extends Fragment implements View.OnClickListener{
+public class Tolkbilag1_fragment extends Fragment implements View.OnClickListener {
 
     private Button next = null;
     private Fragmentmanager fragments = new Fragmentmanager();

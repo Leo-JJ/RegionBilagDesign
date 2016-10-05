@@ -1,166 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tolkebilag3_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/tolkebilag3_view">
+    android:layout_height="match_parent">
 
     <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/evaType1"
-        android:layout_marginEnd="10dp"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/evaText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/evaText1"
-        android:layout_alignTop="@+id/evaText1" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/evaText1"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/evaText1" />
 
     <EditText
+        android:id="@+id/evaText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="none"
-        android:text="Kommunikation mellem rekvirent og tolk:"
-        android:ems="10"
-        android:editable="false"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/evaText1"
-        android:layout_alignParentStart="true"
-        android:id="@+id/evaText2" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/evaType2"
-        android:layout_alignEnd="@+id/evaType1"
-        android:layout_toEndOf="@+id/evaText2"
-        android:layout_alignBottom="@+id/evaText2"
-        android:layout_below="@+id/evaText1" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="none"
-        android:text="Vil du anvende tolken igen:"
-        android:ems="10"
         android:editable="false"
-        android:layout_below="@+id/evaText2"
-        android:layout_alignParentStart="true"
-        android:id="@+id/evaText3" />
+        android:ems="10"
+        android:inputType="none"
+        android:text="Kommunikation mellem rekvirent og tolk:" />
 
     <Spinner
+        android:id="@+id/evaType2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/evaType3"
-        android:layout_below="@+id/evaType2"
-        android:layout_alignBottom="@+id/evaText3"
-        android:layout_alignEnd="@+id/evaType2"
+        android:layout_alignBottom="@+id/evaText2"
+        android:layout_alignEnd="@+id/evaType1"
+        android:layout_below="@+id/evaText1"
         android:layout_toEndOf="@+id/evaText2" />
 
     <EditText
+        android:id="@+id/evaText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="none"
-        android:text="Kom tolken til tiden:"
-        android:ems="10"
-        android:editable="false"
-        android:layout_below="@+id/evaText3"
         android:layout_alignParentStart="true"
-        android:id="@+id/evaText4" />
+        android:layout_below="@+id/evaText2"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="none"
+        android:text="Vil du anvende tolken igen:" />
 
     <Spinner
+        android:id="@+id/evaType3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/evaText3"
+        android:layout_alignEnd="@+id/evaType2"
+        android:layout_below="@+id/evaType2"
+        android:layout_toEndOf="@+id/evaText2" />
+
+    <EditText
+        android:id="@+id/evaText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/evaText3"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="none"
+        android:text="Kom tolken til tiden:" />
+
+    <Spinner
         android:id="@+id/evaType4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/evaText4"
         android:layout_alignEnd="@+id/evaType2"
         android:layout_below="@+id/evaType3"
         android:layout_toEndOf="@+id/evaText3" />
 
     <EditText
+        android:id="@+id/evaComment"
         android:layout_width="wrap_content"
         android:layout_height="130dp"
+        android:layout_alignEnd="@+id/evaType4"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/evaText4"
+        android:background="@drawable/kanter"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Evaluering foretaget af:"
         android:inputType="textMultiLine"
         android:lines="5"
-        android:gravity="top"
         android:paddingLeft="10dp"
-        android:hint="Evaluering foretaget af:"
-        android:ems="10"
-        android:background="@drawable/kanter"
-        android:textColor="#000000"
-        android:id="@+id/evaComment"
-        android:layout_below="@+id/evaText4"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/evaType4" />
+        android:textColor="#000000" />
 
     <Button
-        android:text="Tryk næste for at underskriver"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/next"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="Tryk næste for at underskriver" />
 
     <TextView
-        android:text="UDFYLDES AF LÆGE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:text="UDFYLDES AF LÆGE"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
         android:id="@+id/laegeydernr"
-        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/evaType1"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:ems="10"
+        android:hint="Lægens ydernummer *"
         android:inputType="number"
-        android:hint="Lægens ydernummer *" />
+        android:textColor="#000000" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kommunikaion mellem tolk og patient:"
-        android:ems="10"
-        android:editable="false"
         android:id="@+id/evaText1"
-        android:layout_below="@+id/laegeydernr"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/evaComment"
         android:layout_alignParentStart="true"
-        android:id="@+id/textView1" />
+        android:layout_below="@+id/laegeydernr"
+        android:editable="false"
+        android:ems="10"
+        android:text="Kommunikaion mellem tolk og patient:" />
 
     <TextView
-        android:text="Counter"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/evaComment"
+        android:text="Counter" />
+
+    <TextView
         android:id="@+id/textView2"
-        android:layout_below="@+id/evaComment"
-        android:layout_alignEnd="@+id/textView" />
-
-    <TextView
-        android:text="Counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView"
         android:layout_below="@+id/evaComment"
+        android:text="Counter" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/evaComment"
-        android:id="@+id/textView4" />
+        android:layout_below="@+id/evaComment"
+        android:text="Counter" />
 
     <TextView
-        android:text="Counter"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"
         android:layout_below="@+id/evaComment"
-        android:layout_toEndOf="@+id/evaText4" />
+        android:layout_toEndOf="@+id/evaText4"
+        android:text="Counter" />
 
 </RelativeLayout>

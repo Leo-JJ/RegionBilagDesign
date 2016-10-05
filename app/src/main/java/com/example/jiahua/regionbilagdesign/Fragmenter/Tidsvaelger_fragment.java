@@ -17,7 +17,7 @@ import com.example.jiahua.regionbilagdesign.R;
  * Created by Jiahua on 29-09-2016.
  */
 
-public class Tidsvaelger_fragment extends DialogFragment implements View.OnClickListener{
+public class Tidsvaelger_fragment extends DialogFragment implements View.OnClickListener {
 
     TabHost tabs;
     Button setTimeRange;
@@ -69,11 +69,11 @@ public class Tidsvaelger_fragment extends DialogFragment implements View.OnClick
         tabs.addTab(tabpage1);
         tabs.addTab(tabpage2);
 
-        if(is24HourMode) {
+        if (is24HourMode) {
             startTimePicker.setIs24HourView(true);
             endTimePicker.setIs24HourView(true);
         }
-        if (end == 1){
+        if (end == 1) {
             tabs.setCurrentTab(1);
         }
 

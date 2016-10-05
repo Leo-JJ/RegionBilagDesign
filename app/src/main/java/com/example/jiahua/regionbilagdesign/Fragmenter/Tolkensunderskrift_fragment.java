@@ -30,7 +30,7 @@ import java.io.OutputStream;
 /**
  * Created by Jiahua on 27-09-2016.
  */
-public class Tolkensunderskrift_fragment extends Fragment{
+public class Tolkensunderskrift_fragment extends Fragment {
 
     private SignaturePad mSignaturePad;
     private ImageButton mClearButton;
@@ -81,10 +81,9 @@ public class Tolkensunderskrift_fragment extends Fragment{
             public void onClick(View view) {
                 Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                 if (addSignatureToGallery(signatureBitmap)) {
-                    if(Laegeunderskrift_fragment.bilagsendt ) {
+                    if (Laegeunderskrift_fragment.bilagsendt) {
                         Toast.makeText(getActivity(), "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
+                    } else {
                         Toast.makeText(getActivity(), "Der skete en fejl, brug venligst et almindeligt bilag ", Toast.LENGTH_LONG).show();
                     }
 
@@ -97,11 +96,11 @@ public class Tolkensunderskrift_fragment extends Fragment{
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     getActivity(),
-                    new String[]{ Manifest.permission.READ_EXTERNAL_STORAGE},
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     1);
         }
 
-        if(getArguments() != null) {
+        if (getArguments() != null) {
             //bilagindholdet = (bilagobjekt) getArguments().getSerializable("bilagindholdet");
         }
         return rod;

@@ -16,7 +16,7 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.fragment_view);
 
         if (savedInstanceState == null) {
-                     getSupportFragmentManager().beginTransaction()
+            getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, fragments.getVelkommenfragment())
                     .commit();
         }

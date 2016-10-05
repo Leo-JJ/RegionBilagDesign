@@ -25,8 +25,8 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
     private Fragmentmanager fragments = new Fragmentmanager();
     private Button next;
 
-    public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState){
-        View rod=i.inflate(R.layout.tolkbilag3_view,container,false);
+    public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
+        View rod = i.inflate(R.layout.tolkbilag3_view, container, false);
 
         next = (Button) rod.findViewById(R.id.next);
         next.setOnClickListener(this);
@@ -37,30 +37,30 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaType4 = (Spinner) rod.findViewById(R.id.evaType4);
 
         // Slettes senere, det er kun for at teste
-        textView1 = (TextView)rod.findViewById(R.id.textView1);
-        textView2 = (TextView)rod.findViewById(R.id.textView2);
-        textView3 = (TextView)rod.findViewById(R.id.textView3);
-        textView4 = (TextView)rod.findViewById(R.id.textView4);
+        textView1 = (TextView) rod.findViewById(R.id.textView1);
+        textView2 = (TextView) rod.findViewById(R.id.textView2);
+        textView3 = (TextView) rod.findViewById(R.id.textView3);
+        textView4 = (TextView) rod.findViewById(R.id.textView4);
 
-        String[] eva1 = new String[] {
+        String[] eva1 = new String[]{
                 "God",
                 "Mindre god"
         };
         final int[] val1 = {1, 0};
 
-        String[] eva2 = new String[] {
+        String[] eva2 = new String[]{
                 "God",
                 "Mindre god"
         };
         final int[] val2 = {1, 0};
 
-        String[] eva3 = new String[] {
+        String[] eva3 = new String[]{
                 "Ja",
                 "Nej"
         };
         final int[] val3 = {1, 0};
 
-        String[] eva4 = new String[] {
+        String[] eva4 = new String[]{
                 "Ja",
                 "Nej"
         };
@@ -127,11 +127,11 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         });
 
         return rod;
-        }
+    }
 
     @Override
     public void onClick(View v) {
-        if(v == next){
+        if (v == next) {
             getFragmentManager().beginTransaction().replace(R.id.container, fragments.getLaegeunderskriftfragment()).addToBackStack(fragments.getLaegeunderskriftfragment().getTag()).commit();
         }
     }

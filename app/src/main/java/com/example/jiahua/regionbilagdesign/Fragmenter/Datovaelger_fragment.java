@@ -12,11 +12,12 @@ import android.widget.DatePicker;
 import android.widget.TabHost;
 
 import com.example.jiahua.regionbilagdesign.R;
+
 /**
  * Created by Jiahua on 29-09-2016.
  */
 
-public class Datovaelger_fragment extends DialogFragment implements View.OnClickListener{
+public class Datovaelger_fragment extends DialogFragment implements View.OnClickListener {
 
     private OnDateRangeSelectedListener onDateRangeSelectedListener;
 
@@ -44,7 +45,6 @@ public class Datovaelger_fragment extends DialogFragment implements View.OnClick
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.datovaelger_view, container, false);
@@ -65,7 +65,7 @@ public class Datovaelger_fragment extends DialogFragment implements View.OnClick
         endDatePage.setIndicator(getString(R.string.ttile_tab_end_date));
         tabHost.addTab(startDatePage);
         tabHost.addTab(endDatePage);
-        if(end == 1){
+        if (end == 1) {
             tabHost.setCurrentTab(1);
         }
         return root;
@@ -89,8 +89,8 @@ public class Datovaelger_fragment extends DialogFragment implements View.OnClick
     public void onClick(View v) {
         System.out.println(v.toString());
         dismiss();
-        onDateRangeSelectedListener.onDateRangeSelected(startDatePicker.getDayOfMonth(),startDatePicker.getMonth(),startDatePicker.getYear(),
-                endDatePicker.getDayOfMonth(),endDatePicker.getMonth(),endDatePicker.getYear());
+        onDateRangeSelectedListener.onDateRangeSelected(startDatePicker.getDayOfMonth(), startDatePicker.getMonth(), startDatePicker.getYear(),
+                endDatePicker.getDayOfMonth(), endDatePicker.getMonth(), endDatePicker.getYear());
     }
 
     public interface OnDateRangeSelectedListener {
