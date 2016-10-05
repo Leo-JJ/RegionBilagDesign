@@ -28,15 +28,15 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
     private boolean sluttidkun = false;
     private Fragmentmanager fragments = new Fragmentmanager();
     private Button next = null;
-    private String s1, s2;
+    private String s1, s2, s3, s4;
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
         View rod = i.inflate(R.layout.tolkbilag2_view, container, false);
         next = (Button) rod.findViewById(R.id.next);
 
         Tolkningtype = (Spinner) rod.findViewById(R.id.spinnerTolkningtype);
-        Ydelsesomfang = (Spinner) rod.findViewById(R.id.spinnerOmfangogtype);
-        //Ydelsestype = (Spinner) rod.findViewById(R.id.Ydelsenstype);
+        Ydelsesomfang = (Spinner) rod.findViewById(R.id.spinnerOmfang);
+        Ydelsestype = (Spinner) rod.findViewById(R.id.spinnerType);
         textView1 = (TextView)rod.findViewById(R.id.textView1); //Slettes senere, det er kun for at test
         textView2 = (TextView) rod.findViewById(R.id.textView2); //Slettes senere, det er kun for at test
         sprog = (EditText) rod.findViewById(R.id.Sprog);
@@ -52,7 +52,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
         };
         final int[] val1 = { 0, 1, 2};
 
-        String[] ydelsensomfang = new String[] {
+        /*String[] ydelsensomfang = new String[] {
                 "Planlagt tolkning 08-17 hverdage - Konsultation",
                 "Planlagt tolkning 08-17 hverdage - Telefonkonsultation",
                 "Planlagt tolkning 08-17 hverdage - Webcamtolkning",
@@ -78,9 +78,9 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 "Tolkning aflyst indenfor 12 timer - Telefonkonsultation",
                 "Tolkning aflyst indenfor 12 timer - Webcamtolkning"
         };
-        final int[] val2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+        final int[] val2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};*/
 
-        /*String[] ydelsensomfang = new String[] {
+        String[] ydelsensomfang = new String[] {
                 "Planlagt tolkning 08-17 hverdage",
                 "Planlagt tolkning 17-08 hverdage",
                 "Akuttolkning 08-17 hverdage",
@@ -90,16 +90,15 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
                 "Tolken udeblevet",
                 "Tolkning aflyst indenfor 12 timer"
         };
-        final int[] val3 = {0, 1, 2, 3, 4, 5, 6, 7};
+        final int[] val2 = {0, 1, 2, 3, 4, 5, 6, 7};
 
         String[] ydelsenstype = new String[] {
                 "Konsultation",
                 "Telefonkonsultation",
                 "Webcamtolkning"
         };
-        final int[] val4 = {0, 1, 2};
-        final int[] val5 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
-        */
+        final int[] val3 = {0, 1, 2};
+        final int[] val4 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, tolkforbindelse);
         Tolkningtype.setAdapter(adapter);
@@ -122,7 +121,81 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 s2 = String.valueOf(val2[position]);
-                textView2.setText(s2); //Slettes senere, det er kun for at test
+
+                if(s2 == "0" && s3 == "0"){
+                    s4 = String.valueOf(val4[0]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "0" && s3 == "1"){
+                    s4 = String.valueOf(val4[1]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "0" && s3 == "2"){
+                    s4 = String.valueOf(val4[2]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "1" && s3 == "0"){
+                    s4 = String.valueOf(val4[3]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "1" && s3 == "1"){
+                    s4 = String.valueOf(val4[4]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "1" && s3 == "2"){
+                    s4 = String.valueOf(val4[5]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "2" && s3 == "0"){
+                    s4 = String.valueOf(val4[6]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "2" && s3 == "1"){
+                    s4 = String.valueOf(val4[7]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "2" && s3 == "2"){
+                    s4 = String.valueOf(val4[8]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "3" && s3 == "0"){
+                    s4 = String.valueOf(val4[9]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "3" && s3 == "1"){
+                    s4 = String.valueOf(val4[10]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "3" && s3 == "2"){
+                    s4 = String.valueOf(val4[11]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "4" && s3 == "0"){
+                    s4 = String.valueOf(val4[12]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "4" && s3 == "1"){
+                    s4 = String.valueOf(val4[13]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "4" && s3 == "2"){
+                    s4 = String.valueOf(val4[14]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "5" && s3 == "0"){
+                    s4 = String.valueOf(val4[15]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "5" && s3 == "1"){
+                    s4 = String.valueOf(val4[16]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "5" && s3 == "2"){
+                    s4 = String.valueOf(val4[17]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "6" && s3 == "0"){
+                    s4 = String.valueOf(val4[18]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "6" && s3 == "1"){
+                    s4 = String.valueOf(val4[19]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "6" && s3 == "2"){
+                    s4 = String.valueOf(val4[20]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "7" && s3 == "0"){
+                    s4 = String.valueOf(val4[21]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "7" && s3 == "1"){
+                    s4 = String.valueOf(val4[22]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "7" && s3 == "2"){
+                    s4 = String.valueOf(val4[23]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }
+
             }
 
             @Override
@@ -131,8 +204,94 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
             }
         });
 
-        /*ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsenstype);
-        Ydelsestype.setAdapter(adapter2);*/
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsenstype);
+        Ydelsestype.setAdapter(adapter2);
+        Ydelsestype.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                s3 = String.valueOf(val3[position]);
+
+                if(s2 == "0" && s3 == "0"){
+                    s4 = String.valueOf(val4[0]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "0" && s3 == "1"){
+                    s4 = String.valueOf(val4[1]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "0" && s3 == "2"){
+                    s4 = String.valueOf(val4[2]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "1" && s3 == "0"){
+                    s4 = String.valueOf(val4[3]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "1" && s3 == "1"){
+                    s4 = String.valueOf(val4[4]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "1" && s3 == "2"){
+                    s4 = String.valueOf(val4[5]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "2" && s3 == "0"){
+                    s4 = String.valueOf(val4[6]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "2" && s3 == "1"){
+                    s4 = String.valueOf(val4[7]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "2" && s3 == "2"){
+                    s4 = String.valueOf(val4[8]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "3" && s3 == "0"){
+                    s4 = String.valueOf(val4[9]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "3" && s3 == "1"){
+                    s4 = String.valueOf(val4[10]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "3" && s3 == "2"){
+                    s4 = String.valueOf(val4[11]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "4" && s3 == "0"){
+                    s4 = String.valueOf(val4[12]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "4" && s3 == "1"){
+                    s4 = String.valueOf(val4[13]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "4" && s3 == "2"){
+                    s4 = String.valueOf(val4[14]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "5" && s3 == "0"){
+                    s4 = String.valueOf(val4[15]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "5" && s3 == "1"){
+                    s4 = String.valueOf(val4[16]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "5" && s3 == "2"){
+                    s4 = String.valueOf(val4[17]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "6" && s3 == "0"){
+                    s4 = String.valueOf(val4[18]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "6" && s3 == "1"){
+                    s4 = String.valueOf(val4[19]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "6" && s3 == "2"){
+                    s4 = String.valueOf(val4[20]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "7" && s3 == "0"){
+                    s4 = String.valueOf(val4[21]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "7" && s3 == "1"){
+                    s4 = String.valueOf(val4[22]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }else if (s2 == "7" && s3 == "2"){
+                    s4 = String.valueOf(val4[23]);
+                    textView2.setText(s4); //Slettes senere, det er kun for at test
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
