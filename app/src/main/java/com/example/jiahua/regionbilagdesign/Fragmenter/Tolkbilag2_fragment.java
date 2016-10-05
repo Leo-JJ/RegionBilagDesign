@@ -45,7 +45,6 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_fragmen
         fratid = (EditText) rod.findViewById(R.id.Fratid);
         tiltid = (EditText) rod.findViewById(R.id.Tiltid);
 
-
         String[] tolkforbindelse = new String[]{
                 "Ambulant besøg",
                 "Førstegangstolkning under ét indlæggelsesforløb",
