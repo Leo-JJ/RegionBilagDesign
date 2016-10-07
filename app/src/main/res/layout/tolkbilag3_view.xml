@@ -21,7 +21,6 @@
         android:layout_below="@+id/evaText1"
         android:editable="false"
         android:ems="10"
-        android:inputType="none"
         android:text="Kommunikation mellem rekvirent og tolk:" />
 
     <Spinner
@@ -41,7 +40,6 @@
         android:layout_below="@+id/evaText2"
         android:editable="false"
         android:ems="10"
-        android:inputType="none"
         android:text="Vil du anvende tolken igen:" />
 
     <Spinner
@@ -61,7 +59,6 @@
         android:layout_below="@+id/evaText3"
         android:editable="false"
         android:ems="10"
-        android:inputType="none"
         android:text="Kom tolken til tiden:" />
 
     <Spinner
@@ -93,8 +90,8 @@
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView4"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/kanter"
         android:text="Tryk næste for at underskriver"
@@ -144,24 +141,25 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_below="@+id/evaComment"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView1"
         android:text="Counter" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/evaComment"
-        android:layout_below="@+id/evaComment"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView3"
+        android:layout_toStartOf="@+id/textView3"
         android:text="Counter" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/evaComment"
-        android:layout_toEndOf="@+id/evaText4"
         android:text="Counter" />
 
 </RelativeLayout>
